@@ -6,18 +6,18 @@
   tasks:
     - name: Create resource group
       azure_rm_resourcegroup:
-        name: ansible-rg
+        name: ansible-deployment
         location: eastus
         
     - name: Create virtual network
       azure_rm_virtualnetwork:
-        resource_group: ansible-rg
+        resource_group: ansible-deployment
         name: Demo-vNet
         address_prefixes: "10.0.0.0/16"
 
     - name: Add subnet
       azure_rm_subnet:
-        resource_group: ansible-rg
+        resource_group: ansible-deployment
         name: webSubnet
         address_prefix: "10.0.1.0/24"
         virtual_network: Demo-vNet
