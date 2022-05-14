@@ -1,7 +1,8 @@
 ---
 - hosts: localhost
   connection: local
-
+  collections:
+    - azure.azcollection
 
   tasks:
     - name: Create resource group
